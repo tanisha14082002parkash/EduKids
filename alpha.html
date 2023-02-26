@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Front Camera Stream</title>
+    <style>
+		#video {
+			transform: scaleX(-1);
+			-webkit-transform: scaleX(-1);
+			-ms-transform: scaleX(-1);
+		}
+	</style>
+</head>
+<body>
+	<video id="video" width="640" height="480" autoplay></video>
+	<script>
+		navigator.mediaDevices.getUserMedia({video: {facingMode: "user"}})
+		.then(function(stream) {
+			var video = document.getElementById("video");
+			video.srcObject = stream;
+			video.play();
+		})
+		.catch(function(err) {
+			console.log("Error: " + err);
+		});
+	</script>
+</body>
+</html>
