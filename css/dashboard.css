@@ -1,0 +1,260 @@
+/* Set the background color */
+/* @keyframes change-background {
+  0% { background-image: url(background1.jpg); }
+  33% { background-image: url(background2.jpg); }
+  66% { background-image: url(background3.jpg); }
+  100% { background-image: url(background1.jpg); }
+} */
+
+/* Apply the animation to the body element */
+/* body {
+  animation: change-background 20s infinite;
+} */
+
+body {
+    background-image: url('../images/bgd.png'); 
+    background-size: cover;
+    display: flex;
+  }
+  h1{
+    color: white;
+    margin: 20px;
+  }
+  /* Set the navigation bar style */
+  .navbar {
+    display: flex;
+  flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #34135f; /* white */
+    border-bottom: 1px solid #CCCCCC; /* light gray */
+  }
+  
+  /* Set the navigation button style */
+  .navbar button {
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: #FFC3DC; /* light pink */
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0d0450; /* white */
+    cursor: pointer;
+    transition-duration: 0.4s;
+    width: 200px;
+    height: 50px;
+    border: 4px solid black;
+  }
+
+  .navbar button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  /* Set the hexagonal button style */
+  .hexagon {
+    position: relative;
+    width: 250px;
+    height: 180px;
+    margin: 50px;
+    background-color: #FFC3DC; /* light pink */
+    border-radius: 10px;
+    border: 4px solid black;
+    cursor: pointer;
+  }
+  
+  /* .hexagon:before, */
+  /* .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+  } */
+  
+  .hexagon:before {
+    top: -43.30px;
+    border-bottom: 43.30px solid #FFC3DC; /* light pink */
+  }
+  
+  .hexagon:after {
+    bottom: -43.30px;
+    border-top: 43.30px solid #FFC3DC; /* light pink */
+  }
+  
+  /* Set the text inside the hexagonal button */
+  .hexagon span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #1b13a8; /* white */
+  }
+  .hexagon:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #78d97c; /* Green */
+    color: white;
+    animation-play-state: paused;
+    transform: rotateY(0deg);    
+    transition: transform 0.5s ease;
+  }
+
+  #b1{
+    top:10px;
+    left:35%;
+    position: absolute;
+  }
+  #b2{
+    top: 10px;
+    left: 55%;
+    position: absolute;
+  }
+  #s1{
+    top: 90px;
+    left: 15%;
+    position: absolute;
+    background-image: url(../images/abcd.webp);
+    background-size: cover;
+  background-position: center;
+  }
+  #s2{
+    top: 90px;
+    left: 65%;
+    position: absolute;
+    background-image: url(../images/12.jpg);
+    background-size: cover;
+  background-position: center;
+  }
+  #s3{
+    top: 250px;
+    left: 40%;
+    position: absolute;
+    background-image: url(../images/shapes.jpg);
+    background-size: cover;
+  background-position: center;
+  }
+  #s4{
+    top: 350px;
+    left: 15%;
+    position: absolute;
+    background-image: url(../images/fill.png);
+    background-size: cover;
+  background-position: center;
+  }
+  #s5{
+    top: 350px;
+    left: 65%;
+    position: absolute;
+    background-image: url(../images/pm.png);
+    background-size: cover;
+  background-position: center;
+  }
+  @media (max-width: 768px) {
+    #b1{
+      position: fixed;
+      top: 50px;
+      left: 10%;
+      transform: none;
+    }
+    #b2{
+      position: fixed;
+      top: 50px;
+      left: 50%;
+      transform: none;
+    }
+    .navbar{
+      height: 130px;
+    }
+    .hexagon{
+      position: relative;
+    width: 120px;
+    height: 100px;
+    }
+    #s1{
+      top: 90px;
+    left: 15%;
+    position: absolute;
+    }
+    #s2{
+      top: 90px;
+    left: 65%;
+    position: absolute;
+    }
+    #s3{
+      top: 220px;
+    left: 40%;
+    position: absolute;
+    }
+    #s4{
+      top: 350px;
+    left: 15%;
+    position: absolute;
+    }
+    #s5{
+      top: 350px;
+    left: 65%;
+    position: absolute;
+    }
+    
+  }
+  
+  @keyframes example {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(30deg);}
+  }
+
+  /* Apply the animation to the image */
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(-15deg);
+    }
+    to {
+      transform: rotate(15deg);
+    }
+  }
+  @keyframes rotate2 {
+    form{
+      transform: rotate(15deg);
+    }
+    to{
+      transform: rotate(-15deg);
+    }
+  }
+  @keyframes r{
+    0% {
+      transform: rotateY(-90deg);
+    }
+    50% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(-90deg);
+    }
+  }
+  .hexagon {
+    animation-name: r;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  #m{
+    top:300px;
+    left: -5%;
+    position:absolute;
+  }
+  #speaker{
+    width: 100px;
+    height: 50px;
+    position: fixed;
+  top: 2px;
+  right: 5px;
+    cursor: pointer;
+  }
