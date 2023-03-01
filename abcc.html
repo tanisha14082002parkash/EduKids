@@ -6,25 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .character {
-            position: center;
+    .character {
+    position: center;
   width: 1800px;
   height: 195px;
-  background: url('images.jpeg') 0 0;
-  animation: animate-character 1.2s steps(5) infinite;
+  /* background: url('images.jpeg') 0 0; */
+  animation: animate-character 2s steps(20) infinite;
 }
 
 /* Define the keyframe animation */
 @keyframes animate-character {
   from { background-position: 700 700; }
-  to { background-position: -900px 0; }
+  to { background-position: -1000px 0; }
 }
 
     </style>
+    <script>
+    
+        setTimeout(() => {
+            document.body.style.backgroundColor='red';
+            setTimeout(() =>{
+                document.body.style.backgroundColor='orange';
+                setTimeout(() =>{
+                    document.body.style.backgroundColor='yellow';
+                    setTimeout(() => {
+                        document.body.style.backgroundColor='green';
+                        setTimeout(() =>{
+                            document.body.style.backgroundColor='green';
+                            setTimeout(() =>{
+                                document.body.style.backgroundColor='blue';
+                            },1500)
+                        },1500)
+                    },1500)
+                },1500)
+            },1500)
+        },1500)
+        
+    </script>
 </head>
 <body>
     <div class="loading">
-        <div class="character"></div>
+        <h1> Let's Go</h1>
+        <div class="character">
+            <img src="images/letgo.gif" alt="Let's Go!">
+        </div>
         
       </div>
 </body>
