@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .character {
+            position: center;
+  width: 1800px;
+  height: 195px;
+  background: url('images.jpeg') 0 0;
+  animation: animate-character 1.2s steps(5) infinite;
+}
+
+/* Define the keyframe animation */
+@keyframes animate-character {
+  from { background-position: 700 700; }
+  to { background-position: -900px 0; }
+}
+
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="character"></div>
+        
+      </div>
+</body>
+</html>
