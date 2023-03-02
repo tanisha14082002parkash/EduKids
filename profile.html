@@ -28,7 +28,10 @@
         position: absolute;
         top: 100px;
         left: 50px;
-      }
+        border: 1px solid black;
+        top: 170px;
+}
+      
       .profile {
         display: flex;
         flex-direction: column;
@@ -61,9 +64,10 @@
   /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); */
   width: 500px;
   height: 400px;
-  position: fixed;
+  position: absolute;
   bottom: 100px;
   right: 10px;
+  top:200px;
 }
 h1 {
   text-align: center;
@@ -82,7 +86,20 @@ h1 {
     width: auto;
   }
 }
-
+@media only screen and (max-width: 780px) {
+  .container2 {
+    height: 300px;
+    width: 300px;
+  }
+  #score{
+    position: absolute;
+  top: 50px;
+  }
+  #rank{
+    position: absolute;
+  top: 100px;
+}
+}
 @media all and (max-width: 400px) {
   .container2 {
     padding: 0px 20px;
@@ -92,12 +109,7 @@ h1 {
     height: 50px;
     width: 50px;
   }
-  #score{
-  top: 70px;
-  }
-  #rank{
-  top: 100px;
-}
+  
 }
 #catan{
   font-size: 30px;
@@ -105,12 +117,25 @@ h1 {
 #score{
   position: absolute;
   top: 90px;
-  right: 10px;
+  right: 50px;
 }
 #rank{
   position: absolute;
   top: 90px;
-  left: 30px;
+  left: 50px;
+}
+.skills{
+  /* float: center; */
+  position: absolute;
+  left: 400px;
+  top: 170px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(80, 29, 70);
+}
+ul{
+  list-style-type: none;
 }
     </style>
   </head>
@@ -121,17 +146,16 @@ h1 {
     <div class="container">
       <div class="profile">
         <img src="{{url_for('static',filename='hurahh.jpg')}}" alt="Profile Picture">
-        <div class="skills">
-          <ul>
-            <li>Name {{xx[3]}} {{xx[4]}}</li><br><br>
-            <li>Age {{xx[5]}}</li><br><br>
-            <li>Gender {{xx[6]}}</li><br><br>
-                    <li>Email Id {{xx[7]}}</li><br><br>
-          </ul>
-        </div>
       </div>
       </div>
-
+      <div class="skills">
+        <ul>
+          <li>Name {{xx[3]}} {{xx[4]}}</li><br>
+          <li>Age {{xx[5]}}</li><br>
+          <li>Gender {{xx[6]}}</li><br>
+          <li>Email Id {{xx[7]}}</li><br>
+        </ul>
+      </div>
       
       
     <div class="container2" >
