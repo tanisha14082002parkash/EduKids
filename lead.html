@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/favicon.ico')}}" type="image/x-icon">  
+    <style>
+        body{
+            background-color: rgb(247, 242, 194);
+        }
+        .leaderboard {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+          }
+          
+          h1 {
+            font-size: 24px;
+            text-align: center;
+          }
+          
+          ol {
+            list-style: none;
+            padding: 0;
+          }
+          
+          li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+          }
+          
+          li:first-child {
+            font-weight: bold;
+          }
+          li:nth-child(2) {
+            font-weight: bold;
+          }
+          .name {
+            flex-basis: 70%;
+          }
+          
+          .score {
+            flex-basis: 30%;
+            text-align: right;
+          }
+          
+    </style>
+</head>
+<body>
+    
+  <div class="leaderboard">
+    <h1>Leaderboard</h1>
+        <ol>
+            <li>
+            <span class="name">Username</span>
+            <span class="score">Rank</span>
+            <span class="score">Score</span>
+            </li>
+            <li>
+            <span class="name">{{msg}}</span>
+            <span class="score">{{rank1[0]}}</span>
+            <span class="score">{{score[0]}}</span>
+            </li>
+            {% for row in rank %}
+            <li>
+            <span class="name">{{row[0]}}</span>
+            <span class="score">{{row[2]}}</span>
+            <span class="score">{{row[1]}}</span>
+             </li>
+            {% endfor %}
+          
+        </ol>
+      </div>
+</body>
+</html>
