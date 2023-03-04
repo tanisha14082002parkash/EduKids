@@ -137,6 +137,52 @@ h1 {
 ul{
   list-style-type: none;
 }
+#char {
+  position: absolute;
+  bottom: 100px;
+  left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 20px;
+}
+#char img{
+  width: 20%;
+  margin: 10px;
+}
+
+/* #img1{
+  width: 20%;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: opacity 1s ease-in-out;
+}
+#img2{
+  width: 20%;
+  height: 100px;
+  position: absolute;
+}
+#img3{
+  width: 20%;
+  height: 100px;
+  position: absolute;
+}
+#img4{
+  width: 20%;
+  height: 100px;
+  position: absolute;
+}
+#img5{
+  width: 20%;
+  height: 100px;
+  position: absolute; */
+/* } */
     </style>
   </head>
   <body>
@@ -199,5 +245,61 @@ ul{
     <div id="rank">
       <h2>Your Rank is {{rank[0]}}</h2>
     </div>
+
+    <div id="char">
+      <img src="images/characters/A/1.jpg" id="img1">
+      <img src="images/characters/A/2.jpg" id="img2">
+      <img src="images/characters/A/3.jpg" id="img3">
+      <img src="images/characters/A/4.jpg" id="img4">
+      <img src="images/characters/A/5.jpg" id="img5">
+    </div>
   </body>
+  <script>
+  // const myImage = document.getElementById('img1');
+
+// Decrease the opacity of the image
+// myImage.style.opacity = '0.5';
+// Create a list of variables
+var variable1 = document.getElementById('img1');
+var variable2 = document.getElementById('img2');
+var variable3 = document.getElementById('img3');
+var variable4 = document.getElementById('img4');
+var variable5 = document.getElementById('img5');
+
+// Loop through the list of variables
+for (var i = 1; i <= 5; i++) {
+  var variableName = "variable" + i;
+  window[variableName].style.opacity = '0.2';
+}
+var marks=650;
+if (marks>500){
+  for (var i = 1; i <= 5; i++) {
+  var variableName = "variable" + i;
+  window[variableName].style.opacity = '1';
+}
+}
+else if (marks>400){
+  for (var i = 1; i <= 4; i++) {
+  var variableName = "variable" + i;
+  window[variableName].style.opacity = '1';
+}
+}
+else if(marks>300){
+  for (var i = 1; i <= 3; i++) {
+  var variableName = "variable" + i;
+  window[variableName].style.opacity = '1';
+}
+}
+else if(marks>200){
+  for (var i = 1; i <= 2; i++) {
+  var variableName = "variable" + i;
+  window[variableName].style.opacity = '1';
+}
+}
+else if(marks>50){
+  variableName="variable"+1;
+  window[variableName].style.opacity='1';
+}
+</script>
+
 </html>
