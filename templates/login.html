@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/dashboard.css')}}">
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/favicon.ico')}}" type="image/x-icon">
+    <style>
+      a{
+        text-decoration: none;
+        text-align: center;
+        justify-content: center;
+      }
+    </style>
+</head>
+<body>
+  
+  <!-- Navigation bar with two buttons -->
+  <audio id="audio-player" controls autoplay loop>
+    <!-- <audio controls> -->
+    <source src="{{url_for('static',filename='images/music.mp3')}}" type="audio/mpeg">
+    <!-- Your browser does not support the audio element. -->
+  </audio>
+  <div class="navbar">
+    <h1>Hi {{msg}}!</h1>
+    
+    <a href="{{url_for('profile')}}"id="b1">My Profile</a>
+    <a href="{{url_for('lead')}}" id="b2">Leaderboard</a>
+    <!-- <img id="speaker" src="images/speaker.png"> -->
+    <button id="speaker"  onclick="toggleMusic()" type="button">
+      <!-- <img src="{{url_for('static',filename='images/speaker.png')}}"> -->
+    </button>
+    <!-- <audio id="myAudio" src="your-music-file.mp3"></audio> -->
+    <a href="{{url_for('logout')}}" id="logout">Log Out</a>
+    
+  </div>
+
+
+  
+
+  <!-- Five large hexagonal buttons -->
+  <a href="{{url_for('letter')}}" class="hexagon" id="s1">
+    <!-- <span>Learn Alphabets</span> -->
+  </a>
+  
+  <a href="{{url_for('digit')}}" class="hexagon" id="s2">
+    <!-- <span >Learn Numbers</span> -->
+  </a>
+  
+  <a href="{{url_for('shape')}}" class="hexagon" id="s3">
+    <!-- <span >Learn Shapes</span> -->
+  </a>
+  
+  <a href="{{url_for('missing')}}" class="hexagon" id="s4">
+    <!-- <span >Fill in the Blanks</span> -->
+  </a>
+  
+  <a href="{{url_for('operation')}}" class="hexagon" id="s5">
+    <!-- <span >Identify the Object</span> -->
+  </a>
+  <img id="m" src="{{url_for('static',filename='images/mickeygif.gif')}}" alt="Example GIF" width="400" height="300" >
+
+  <script>
+    var speakerImg = document.getElementById("speaker");
+    var audioPlayer = document.getElementById("audio-player");
+    // var isPlaying = true;
+
+    function toggleMusic() {
+      if (audioPlayer.paused==true) {
+        audioPlayer.play();
+        speakerImg.innerHTML=" ";
+        // speakerImg.src = "images/speaker.png";
+  
+      } else {
+        audioPlayer.pause();
+        speakerImg.innerHTML=" ";
+        // speakerImg.src = "images/speakermute.png";
+      }
+    }
+    // speakerImg.addEventListener("click", toggleMusic);
+  
+      </script> 
+</body>
+</html>
