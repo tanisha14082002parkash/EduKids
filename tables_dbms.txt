@@ -1,0 +1,62 @@
+
+
+--TABLES
+CREATE TABLE  EDUKIDS (USERNAME VARCHAR2(20) PRIMARY KEY,FIRST VARCHAR2(20),SECOND VARCHAR(20),PASSWORD VARCHAR2(20),AGE NUMBER(2),GENDER VARCHAR2(20), EMAIL VARCHAR2(23));
+
+CREATE TABLE SCORES (USERNAME VARCHAR2(20) PRIMARY KEY, LETTER NUMBER(4),DIGITS NUMBER(4), MISSINGG NUMBER(4), SHAPES NUMBER(4), MATHS NUMBER(4));
+
+CREATE TABLE TIME_PARENT(USERNAME VARCHAR2(20) PRIMARY KEY , TT NUMBER(6));
+
+--TRIGGERS
+
+ CREATE OR REPLACE TRIGGER CREATE_SCORES
+ AFTER INSERT ON EDUKIDS
+ FOR EACH ROW
+ DECLARE
+ NAME EDUKIDS.USERNAME%TYPE;
+ BEGIN
+ NAME:=:NEW.USERNAME;
+ INSERT INTO SCORES VALUES(NAME,0,0,0,0,0);
+ END;
+
+ CREATE OR REPLACE TRIGGER TIME_RECORD
+ ALTER INSERT ON EDUKIDS
+ FOR EACH ROW
+ DECLARE
+ NAME EDUKIDS.USERNAME%TYPE;
+ BEGIN
+ NAME:=:NEW.USERNAME;
+ INSERT INTO TIME_PARENT VALUES(NAME,0);
+
+ END;
+
+
+--SCHEDULER
+
+ BEGIN
+DBMS_SCHEDULER.create_schedule (
+  schedule_name => 'dailyyy_scheduled',
+  start_date => SYSTIMESTAMP,
+  repeat_interval =>'freq=daily; byhour=0;byminute=0;bysecond=0;',
+  end_date => NULL,
+  comments => 'Run every hour at 00 minutes everyday');
+END;
+
+
+
+BEGIN
+DBMS_SCHEDULER.create_job (
+  job_name => 'test_sched_job1111',
+  --program_name => 'plsql_program',
+  job_type => 'PLSQL_BLOCK',
+  job_action => ' 
+BEGIN
+update TIME_PARENT
+set TT=0;
+END;
+',
+  schedule_name => 'dailyyy_scheduled',
+  enabled => TRUE,
+  comments => 'My test scheduler job');
+END;
+
