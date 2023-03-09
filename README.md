@@ -6,4 +6,4 @@ Setup the database connection (oracle SQL developer version (22.4.3) and put the
 # STEP 2:-
 Run app.py file -->(python app.py)
 # Demo Video
-[![EduKids](https://img.youtube.com/vi/NfilMsnh65E)](https://www.youtube.com/watch?v=NfilMsnh65E)
+[![EduKids](https://img.youtube.com/vi/NfilMsnh65E/0.jpg)](https://www.youtube.com/watch?v=NfilMsnh65E)
