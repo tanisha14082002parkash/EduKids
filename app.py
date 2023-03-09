@@ -41,7 +41,7 @@ from virtual_keyboard import display
 import random
 import threading
 # import * as bcrypt from 'bcrypt'
-conn=cx_Oracle.connect('system/agarwal@//localhost:1521/orcl')
+conn=cx_Oracle.connect('username/password@//localhost:1521/orcl')
 cur=conn.cursor()
 # cur.execute("CREATE TABLE  IF NOT EXISTS EDUKIDS (USERNAME VARCHAR2(20) PRIMARY KEY,FIRST VARCHAR2(20),SECOND VARCHAR(20),PASSWORD VARCHAR2(20),AGE NUMBER(2),GENDER VARCHAR2(20), EMAIL VARCHAR2(23))")
 # conn.commit()
